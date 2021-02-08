@@ -1,9 +1,0 @@
-grammar org.palladiosimulator.supporting.prolog.probabilistic.Workflow with org.eclipse.xtext.common.Terminals
-
-generate workflow "http://www.palladiosimulator.org/supporting/prolog/probabilistic/Workflow"
-
-Model:
-	greetings+=Greeting*;
-	
-Greeting:
-	'Hello' name=ID '!';
