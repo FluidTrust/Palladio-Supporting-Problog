@@ -82,16 +82,10 @@ public class ProblogSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ProblogPackage.ANNOTATED_DISJUNCTION: {
-				AnnotatedDisjunction annotatedDisjunction = (AnnotatedDisjunction)theEObject;
-				T result = caseAnnotatedDisjunction(annotatedDisjunction);
-				if (result == null) result = caseClause(annotatedDisjunction);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ProblogPackage.PROBLOG_PROGRAM: {
-				ProblogProgram problogProgram = (ProblogProgram)theEObject;
-				T result = caseProblogProgram(problogProgram);
+			case ProblogPackage.ANNOTATED_DISJUNCTION_RULE: {
+				AnnotatedDisjunctionRule annotatedDisjunctionRule = (AnnotatedDisjunctionRule)theEObject;
+				T result = caseAnnotatedDisjunctionRule(annotatedDisjunctionRule);
+				if (result == null) result = caseClause(annotatedDisjunctionRule);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -130,32 +124,17 @@ public class ProblogSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Annotated Disjunction</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Annotated Disjunction Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Annotated Disjunction</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Annotated Disjunction Rule</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAnnotatedDisjunction(AnnotatedDisjunction object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Program</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Program</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseProblogProgram(ProblogProgram object) {
+	public T caseAnnotatedDisjunctionRule(AnnotatedDisjunctionRule object) {
 		return null;
 	}
 

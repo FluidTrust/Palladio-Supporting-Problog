@@ -3,7 +3,6 @@
 package org.palladiosimulator.supporting.problog.model.problog;
 
 import org.palladiosimulator.supporting.prolog.model.prolog.Clause;
-import org.palladiosimulator.supporting.prolog.model.prolog.CompoundTerm;
 
 import org.palladiosimulator.supporting.prolog.model.prolog.expressions.Expression;
 
@@ -16,9 +15,8 @@ import org.palladiosimulator.supporting.prolog.model.prolog.expressions.Expressi
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.palladiosimulator.supporting.problog.model.problog.ProbabilisticRule#getProbabilisticFact <em>Probabilistic Fact</em>}</li>
  *   <li>{@link org.palladiosimulator.supporting.problog.model.problog.ProbabilisticRule#getBody <em>Body</em>}</li>
- *   <li>{@link org.palladiosimulator.supporting.problog.model.problog.ProbabilisticRule#getHead <em>Head</em>}</li>
- *   <li>{@link org.palladiosimulator.supporting.problog.model.problog.ProbabilisticRule#getProbability <em>Probability</em>}</li>
  * </ul>
  *
  * @see org.palladiosimulator.supporting.problog.model.problog.ProblogPackage#getProbabilisticRule()
@@ -26,6 +24,28 @@ import org.palladiosimulator.supporting.prolog.model.prolog.expressions.Expressi
  * @generated
  */
 public interface ProbabilisticRule extends Clause {
+	/**
+	 * Returns the value of the '<em><b>Probabilistic Fact</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Probabilistic Fact</em>' containment reference.
+	 * @see #setProbabilisticFact(ProbabilisticFact)
+	 * @see org.palladiosimulator.supporting.problog.model.problog.ProblogPackage#getProbabilisticRule_ProbabilisticFact()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	ProbabilisticFact getProbabilisticFact();
+
+	/**
+	 * Sets the value of the '{@link org.palladiosimulator.supporting.problog.model.problog.ProbabilisticRule#getProbabilisticFact <em>Probabilistic Fact</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Probabilistic Fact</em>' containment reference.
+	 * @see #getProbabilisticFact()
+	 * @generated
+	 */
+	void setProbabilisticFact(ProbabilisticFact value);
+
 	/**
 	 * Returns the value of the '<em><b>Body</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -47,49 +67,5 @@ public interface ProbabilisticRule extends Clause {
 	 * @generated
 	 */
 	void setBody(Expression value);
-
-	/**
-	 * Returns the value of the '<em><b>Head</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Head</em>' containment reference.
-	 * @see #setHead(CompoundTerm)
-	 * @see org.palladiosimulator.supporting.problog.model.problog.ProblogPackage#getProbabilisticRule_Head()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	CompoundTerm getHead();
-
-	/**
-	 * Sets the value of the '{@link org.palladiosimulator.supporting.problog.model.problog.ProbabilisticRule#getHead <em>Head</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Head</em>' containment reference.
-	 * @see #getHead()
-	 * @generated
-	 */
-	void setHead(CompoundTerm value);
-
-	/**
-	 * Returns the value of the '<em><b>Probability</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Probability</em>' attribute.
-	 * @see #setProbability(double)
-	 * @see org.palladiosimulator.supporting.problog.model.problog.ProblogPackage#getProbabilisticRule_Probability()
-	 * @model
-	 * @generated
-	 */
-	double getProbability();
-
-	/**
-	 * Sets the value of the '{@link org.palladiosimulator.supporting.problog.model.problog.ProbabilisticRule#getProbability <em>Probability</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Probability</em>' attribute.
-	 * @see #getProbability()
-	 * @generated
-	 */
-	void setProbability(double value);
 
 } // ProbabilisticRule

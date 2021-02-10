@@ -78,12 +78,8 @@ public class ProblogAdapterFactory extends AdapterFactoryImpl {
 				return createProbabilisticRuleAdapter();
 			}
 			@Override
-			public Adapter caseAnnotatedDisjunction(AnnotatedDisjunction object) {
-				return createAnnotatedDisjunctionAdapter();
-			}
-			@Override
-			public Adapter caseProblogProgram(ProblogProgram object) {
-				return createProblogProgramAdapter();
+			public Adapter caseAnnotatedDisjunctionRule(AnnotatedDisjunctionRule object) {
+				return createAnnotatedDisjunctionRuleAdapter();
 			}
 			@Override
 			public Adapter caseClause(Clause object) {
@@ -138,30 +134,16 @@ public class ProblogAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.supporting.problog.model.problog.AnnotatedDisjunction <em>Annotated Disjunction</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.supporting.problog.model.problog.AnnotatedDisjunctionRule <em>Annotated Disjunction Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.palladiosimulator.supporting.problog.model.problog.AnnotatedDisjunction
+	 * @see org.palladiosimulator.supporting.problog.model.problog.AnnotatedDisjunctionRule
 	 * @generated
 	 */
-	public Adapter createAnnotatedDisjunctionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.supporting.problog.model.problog.ProblogProgram <em>Program</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.palladiosimulator.supporting.problog.model.problog.ProblogProgram
-	 * @generated
-	 */
-	public Adapter createProblogProgramAdapter() {
+	public Adapter createAnnotatedDisjunctionRuleAdapter() {
 		return null;
 	}
 

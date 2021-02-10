@@ -40,22 +40,13 @@ public interface ProblogFactory extends EFactory {
 	ProbabilisticRule createProbabilisticRule();
 
 	/**
-	 * Returns a new object of class '<em>Annotated Disjunction</em>'.
+	 * Returns a new object of class '<em>Annotated Disjunction Rule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Annotated Disjunction</em>'.
+	 * @return a new object of class '<em>Annotated Disjunction Rule</em>'.
 	 * @generated
 	 */
-	AnnotatedDisjunction createAnnotatedDisjunction();
-
-	/**
-	 * Returns a new object of class '<em>Program</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Program</em>'.
-	 * @generated
-	 */
-	ProblogProgram createProblogProgram();
+	AnnotatedDisjunctionRule createAnnotatedDisjunctionRule();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -15,20 +15,16 @@
       disposableProviderFactory="true" extensibleProviderFactory="true" childCreationExtenders="true"
       ecorePackage="problog.ecore#/">
     <genClasses ecoreClass="problog.ecore#//ProbabilisticFact">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference problog.ecore#//ProbabilisticFact/head"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference problog.ecore#//ProbabilisticFact/fact"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute problog.ecore#//ProbabilisticFact/probability"/>
     </genClasses>
     <genClasses ecoreClass="problog.ecore#//ProbabilisticRule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference problog.ecore#//ProbabilisticRule/probabilisticFact"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference problog.ecore#//ProbabilisticRule/body"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference problog.ecore#//ProbabilisticRule/head"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute problog.ecore#//ProbabilisticRule/probability"/>
     </genClasses>
-    <genClasses ecoreClass="problog.ecore#//AnnotatedDisjunction">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference problog.ecore#//AnnotatedDisjunction/probablisticFacts"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference problog.ecore#//AnnotatedDisjunction/body"/>
-    </genClasses>
-    <genClasses ecoreClass="problog.ecore#//ProblogProgram">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference problog.ecore#//ProblogProgram/clauses"/>
+    <genClasses ecoreClass="problog.ecore#//AnnotatedDisjunctionRule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference problog.ecore#//AnnotatedDisjunctionRule/probablisticFacts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference problog.ecore#//AnnotatedDisjunctionRule/body"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

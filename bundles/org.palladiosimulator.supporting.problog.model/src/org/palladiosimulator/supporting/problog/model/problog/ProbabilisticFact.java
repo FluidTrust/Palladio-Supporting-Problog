@@ -14,7 +14,7 @@ import org.palladiosimulator.supporting.prolog.model.prolog.CompoundTerm;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.palladiosimulator.supporting.problog.model.problog.ProbabilisticFact#getHead <em>Head</em>}</li>
+ *   <li>{@link org.palladiosimulator.supporting.problog.model.problog.ProbabilisticFact#getFact <em>Fact</em>}</li>
  *   <li>{@link org.palladiosimulator.supporting.problog.model.problog.ProbabilisticFact#getProbability <em>Probability</em>}</li>
  * </ul>
  *
@@ -24,26 +24,26 @@ import org.palladiosimulator.supporting.prolog.model.prolog.CompoundTerm;
  */
 public interface ProbabilisticFact extends Clause {
 	/**
-	 * Returns the value of the '<em><b>Head</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Fact</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Head</em>' containment reference.
-	 * @see #setHead(CompoundTerm)
-	 * @see org.palladiosimulator.supporting.problog.model.problog.ProblogPackage#getProbabilisticFact_Head()
+	 * @return the value of the '<em>Fact</em>' containment reference.
+	 * @see #setFact(CompoundTerm)
+	 * @see org.palladiosimulator.supporting.problog.model.problog.ProblogPackage#getProbabilisticFact_Fact()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	CompoundTerm getHead();
+	CompoundTerm getFact();
 
 	/**
-	 * Sets the value of the '{@link org.palladiosimulator.supporting.problog.model.problog.ProbabilisticFact#getHead <em>Head</em>}' containment reference.
+	 * Sets the value of the '{@link org.palladiosimulator.supporting.problog.model.problog.ProbabilisticFact#getFact <em>Fact</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Head</em>' containment reference.
-	 * @see #getHead()
+	 * @param value the new value of the '<em>Fact</em>' containment reference.
+	 * @see #getFact()
 	 * @generated
 	 */
-	void setHead(CompoundTerm value);
+	void setFact(CompoundTerm value);
 
 	/**
 	 * Returns the value of the '<em><b>Probability</b></em>' attribute.

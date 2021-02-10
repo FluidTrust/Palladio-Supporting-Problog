@@ -10,10 +10,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.palladiosimulator.supporting.problog.model.problog.ProbabilisticFact;
 import org.palladiosimulator.supporting.problog.model.problog.ProbabilisticRule;
 import org.palladiosimulator.supporting.problog.model.problog.ProblogPackage;
-
-import org.palladiosimulator.supporting.prolog.model.prolog.CompoundTerm;
 
 import org.palladiosimulator.supporting.prolog.model.prolog.expressions.Expression;
 
@@ -27,14 +26,23 @@ import org.palladiosimulator.supporting.prolog.model.prolog.impl.ClauseImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.palladiosimulator.supporting.problog.model.problog.impl.ProbabilisticRuleImpl#getProbabilisticFact <em>Probabilistic Fact</em>}</li>
  *   <li>{@link org.palladiosimulator.supporting.problog.model.problog.impl.ProbabilisticRuleImpl#getBody <em>Body</em>}</li>
- *   <li>{@link org.palladiosimulator.supporting.problog.model.problog.impl.ProbabilisticRuleImpl#getHead <em>Head</em>}</li>
- *   <li>{@link org.palladiosimulator.supporting.problog.model.problog.impl.ProbabilisticRuleImpl#getProbability <em>Probability</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ProbabilisticRuleImpl extends ClauseImpl implements ProbabilisticRule {
+	/**
+	 * The cached value of the '{@link #getProbabilisticFact() <em>Probabilistic Fact</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProbabilisticFact()
+	 * @generated
+	 * @ordered
+	 */
+	protected ProbabilisticFact probabilisticFact;
+
 	/**
 	 * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -44,36 +52,6 @@ public class ProbabilisticRuleImpl extends ClauseImpl implements ProbabilisticRu
 	 * @ordered
 	 */
 	protected Expression body;
-
-	/**
-	 * The cached value of the '{@link #getHead() <em>Head</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getHead()
-	 * @generated
-	 * @ordered
-	 */
-	protected CompoundTerm head;
-
-	/**
-	 * The default value of the '{@link #getProbability() <em>Probability</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProbability()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final double PROBABILITY_EDEFAULT = 0.0;
-
-	/**
-	 * The cached value of the '{@link #getProbability() <em>Probability</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getProbability()
-	 * @generated
-	 * @ordered
-	 */
-	protected double probability = PROBABILITY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,6 +70,49 @@ public class ProbabilisticRuleImpl extends ClauseImpl implements ProbabilisticRu
 	@Override
 	protected EClass eStaticClass() {
 		return ProblogPackage.Literals.PROBABILISTIC_RULE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProbabilisticFact getProbabilisticFact() {
+		return probabilisticFact;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetProbabilisticFact(ProbabilisticFact newProbabilisticFact, NotificationChain msgs) {
+		ProbabilisticFact oldProbabilisticFact = probabilisticFact;
+		probabilisticFact = newProbabilisticFact;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ProblogPackage.PROBABILISTIC_RULE__PROBABILISTIC_FACT, oldProbabilisticFact, newProbabilisticFact);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setProbabilisticFact(ProbabilisticFact newProbabilisticFact) {
+		if (newProbabilisticFact != probabilisticFact) {
+			NotificationChain msgs = null;
+			if (probabilisticFact != null)
+				msgs = ((InternalEObject)probabilisticFact).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ProblogPackage.PROBABILISTIC_RULE__PROBABILISTIC_FACT, null, msgs);
+			if (newProbabilisticFact != null)
+				msgs = ((InternalEObject)newProbabilisticFact).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ProblogPackage.PROBABILISTIC_RULE__PROBABILISTIC_FACT, null, msgs);
+			msgs = basicSetProbabilisticFact(newProbabilisticFact, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProblogPackage.PROBABILISTIC_RULE__PROBABILISTIC_FACT, newProbabilisticFact, newProbabilisticFact));
 	}
 
 	/**
@@ -142,77 +163,13 @@ public class ProbabilisticRuleImpl extends ClauseImpl implements ProbabilisticRu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CompoundTerm getHead() {
-		return head;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetHead(CompoundTerm newHead, NotificationChain msgs) {
-		CompoundTerm oldHead = head;
-		head = newHead;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ProblogPackage.PROBABILISTIC_RULE__HEAD, oldHead, newHead);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setHead(CompoundTerm newHead) {
-		if (newHead != head) {
-			NotificationChain msgs = null;
-			if (head != null)
-				msgs = ((InternalEObject)head).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ProblogPackage.PROBABILISTIC_RULE__HEAD, null, msgs);
-			if (newHead != null)
-				msgs = ((InternalEObject)newHead).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ProblogPackage.PROBABILISTIC_RULE__HEAD, null, msgs);
-			msgs = basicSetHead(newHead, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProblogPackage.PROBABILISTIC_RULE__HEAD, newHead, newHead));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public double getProbability() {
-		return probability;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setProbability(double newProbability) {
-		double oldProbability = probability;
-		probability = newProbability;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProblogPackage.PROBABILISTIC_RULE__PROBABILITY, oldProbability, probability));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case ProblogPackage.PROBABILISTIC_RULE__PROBABILISTIC_FACT:
+				return basicSetProbabilisticFact(null, msgs);
 			case ProblogPackage.PROBABILISTIC_RULE__BODY:
 				return basicSetBody(null, msgs);
-			case ProblogPackage.PROBABILISTIC_RULE__HEAD:
-				return basicSetHead(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -225,12 +182,10 @@ public class ProbabilisticRuleImpl extends ClauseImpl implements ProbabilisticRu
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ProblogPackage.PROBABILISTIC_RULE__PROBABILISTIC_FACT:
+				return getProbabilisticFact();
 			case ProblogPackage.PROBABILISTIC_RULE__BODY:
 				return getBody();
-			case ProblogPackage.PROBABILISTIC_RULE__HEAD:
-				return getHead();
-			case ProblogPackage.PROBABILISTIC_RULE__PROBABILITY:
-				return getProbability();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -243,14 +198,11 @@ public class ProbabilisticRuleImpl extends ClauseImpl implements ProbabilisticRu
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ProblogPackage.PROBABILISTIC_RULE__PROBABILISTIC_FACT:
+				setProbabilisticFact((ProbabilisticFact)newValue);
+				return;
 			case ProblogPackage.PROBABILISTIC_RULE__BODY:
 				setBody((Expression)newValue);
-				return;
-			case ProblogPackage.PROBABILISTIC_RULE__HEAD:
-				setHead((CompoundTerm)newValue);
-				return;
-			case ProblogPackage.PROBABILISTIC_RULE__PROBABILITY:
-				setProbability((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -264,14 +216,11 @@ public class ProbabilisticRuleImpl extends ClauseImpl implements ProbabilisticRu
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ProblogPackage.PROBABILISTIC_RULE__PROBABILISTIC_FACT:
+				setProbabilisticFact((ProbabilisticFact)null);
+				return;
 			case ProblogPackage.PROBABILISTIC_RULE__BODY:
 				setBody((Expression)null);
-				return;
-			case ProblogPackage.PROBABILISTIC_RULE__HEAD:
-				setHead((CompoundTerm)null);
-				return;
-			case ProblogPackage.PROBABILISTIC_RULE__PROBABILITY:
-				setProbability(PROBABILITY_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -285,30 +234,12 @@ public class ProbabilisticRuleImpl extends ClauseImpl implements ProbabilisticRu
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ProblogPackage.PROBABILISTIC_RULE__PROBABILISTIC_FACT:
+				return probabilisticFact != null;
 			case ProblogPackage.PROBABILISTIC_RULE__BODY:
 				return body != null;
-			case ProblogPackage.PROBABILISTIC_RULE__HEAD:
-				return head != null;
-			case ProblogPackage.PROBABILISTIC_RULE__PROBABILITY:
-				return probability != PROBABILITY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (probability: ");
-		result.append(probability);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ProbabilisticRuleImpl

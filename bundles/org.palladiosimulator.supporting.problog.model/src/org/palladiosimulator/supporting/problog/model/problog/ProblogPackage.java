@@ -68,13 +68,13 @@ public interface ProblogPackage extends EPackage {
 	int PROBABILISTIC_FACT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Head</b></em>' containment reference.
+	 * The feature id for the '<em><b>Fact</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_FACT__HEAD = PrologPackage.CLAUSE_FEATURE_COUNT + 0;
+	int PROBABILISTIC_FACT__FACT = PrologPackage.CLAUSE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Probability</b></em>' attribute.
@@ -105,31 +105,22 @@ public interface ProblogPackage extends EPackage {
 	int PROBABILISTIC_RULE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Probabilistic Fact</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROBABILISTIC_RULE__PROBABILISTIC_FACT = PrologPackage.CLAUSE_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Body</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_RULE__BODY = PrologPackage.CLAUSE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Head</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_RULE__HEAD = PrologPackage.CLAUSE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Probability</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBABILISTIC_RULE__PROBABILITY = PrologPackage.CLAUSE_FEATURE_COUNT + 2;
+	int PROBABILISTIC_RULE__BODY = PrologPackage.CLAUSE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Probabilistic Rule</em>' class.
@@ -138,17 +129,17 @@ public interface ProblogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROBABILISTIC_RULE_FEATURE_COUNT = PrologPackage.CLAUSE_FEATURE_COUNT + 3;
+	int PROBABILISTIC_RULE_FEATURE_COUNT = PrologPackage.CLAUSE_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link org.palladiosimulator.supporting.problog.model.problog.impl.AnnotatedDisjunctionImpl <em>Annotated Disjunction</em>}' class.
+	 * The meta object id for the '{@link org.palladiosimulator.supporting.problog.model.problog.impl.AnnotatedDisjunctionRuleImpl <em>Annotated Disjunction Rule</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.palladiosimulator.supporting.problog.model.problog.impl.AnnotatedDisjunctionImpl
-	 * @see org.palladiosimulator.supporting.problog.model.problog.impl.ProblogPackageImpl#getAnnotatedDisjunction()
+	 * @see org.palladiosimulator.supporting.problog.model.problog.impl.AnnotatedDisjunctionRuleImpl
+	 * @see org.palladiosimulator.supporting.problog.model.problog.impl.ProblogPackageImpl#getAnnotatedDisjunctionRule()
 	 * @generated
 	 */
-	int ANNOTATED_DISJUNCTION = 2;
+	int ANNOTATED_DISJUNCTION_RULE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Probablistic Facts</b></em>' containment reference list.
@@ -157,7 +148,7 @@ public interface ProblogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANNOTATED_DISJUNCTION__PROBABLISTIC_FACTS = PrologPackage.CLAUSE_FEATURE_COUNT + 0;
+	int ANNOTATED_DISJUNCTION_RULE__PROBABLISTIC_FACTS = PrologPackage.CLAUSE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Body</b></em>' containment reference.
@@ -166,44 +157,16 @@ public interface ProblogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANNOTATED_DISJUNCTION__BODY = PrologPackage.CLAUSE_FEATURE_COUNT + 1;
+	int ANNOTATED_DISJUNCTION_RULE__BODY = PrologPackage.CLAUSE_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Annotated Disjunction</em>' class.
+	 * The number of structural features of the '<em>Annotated Disjunction Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANNOTATED_DISJUNCTION_FEATURE_COUNT = PrologPackage.CLAUSE_FEATURE_COUNT + 2;
-
-	/**
-	 * The meta object id for the '{@link org.palladiosimulator.supporting.problog.model.problog.impl.ProblogProgramImpl <em>Program</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.palladiosimulator.supporting.problog.model.problog.impl.ProblogProgramImpl
-	 * @see org.palladiosimulator.supporting.problog.model.problog.impl.ProblogPackageImpl#getProblogProgram()
-	 * @generated
-	 */
-	int PROBLOG_PROGRAM = 3;
-
-	/**
-	 * The feature id for the '<em><b>Clauses</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBLOG_PROGRAM__CLAUSES = 0;
-
-	/**
-	 * The number of structural features of the '<em>Program</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROBLOG_PROGRAM_FEATURE_COUNT = 1;
+	int ANNOTATED_DISJUNCTION_RULE_FEATURE_COUNT = PrologPackage.CLAUSE_FEATURE_COUNT + 2;
 
 
 	/**
@@ -217,15 +180,15 @@ public interface ProblogPackage extends EPackage {
 	EClass getProbabilisticFact();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.palladiosimulator.supporting.problog.model.problog.ProbabilisticFact#getHead <em>Head</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.palladiosimulator.supporting.problog.model.problog.ProbabilisticFact#getFact <em>Fact</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Head</em>'.
-	 * @see org.palladiosimulator.supporting.problog.model.problog.ProbabilisticFact#getHead()
+	 * @return the meta object for the containment reference '<em>Fact</em>'.
+	 * @see org.palladiosimulator.supporting.problog.model.problog.ProbabilisticFact#getFact()
 	 * @see #getProbabilisticFact()
 	 * @generated
 	 */
-	EReference getProbabilisticFact_Head();
+	EReference getProbabilisticFact_Fact();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.palladiosimulator.supporting.problog.model.problog.ProbabilisticFact#getProbability <em>Probability</em>}'.
@@ -249,6 +212,17 @@ public interface ProblogPackage extends EPackage {
 	EClass getProbabilisticRule();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.palladiosimulator.supporting.problog.model.problog.ProbabilisticRule#getProbabilisticFact <em>Probabilistic Fact</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Probabilistic Fact</em>'.
+	 * @see org.palladiosimulator.supporting.problog.model.problog.ProbabilisticRule#getProbabilisticFact()
+	 * @see #getProbabilisticRule()
+	 * @generated
+	 */
+	EReference getProbabilisticRule_ProbabilisticFact();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link org.palladiosimulator.supporting.problog.model.problog.ProbabilisticRule#getBody <em>Body</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -260,79 +234,36 @@ public interface ProblogPackage extends EPackage {
 	EReference getProbabilisticRule_Body();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.palladiosimulator.supporting.problog.model.problog.ProbabilisticRule#getHead <em>Head</em>}'.
+	 * Returns the meta object for class '{@link org.palladiosimulator.supporting.problog.model.problog.AnnotatedDisjunctionRule <em>Annotated Disjunction Rule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Head</em>'.
-	 * @see org.palladiosimulator.supporting.problog.model.problog.ProbabilisticRule#getHead()
-	 * @see #getProbabilisticRule()
+	 * @return the meta object for class '<em>Annotated Disjunction Rule</em>'.
+	 * @see org.palladiosimulator.supporting.problog.model.problog.AnnotatedDisjunctionRule
 	 * @generated
 	 */
-	EReference getProbabilisticRule_Head();
+	EClass getAnnotatedDisjunctionRule();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.palladiosimulator.supporting.problog.model.problog.ProbabilisticRule#getProbability <em>Probability</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Probability</em>'.
-	 * @see org.palladiosimulator.supporting.problog.model.problog.ProbabilisticRule#getProbability()
-	 * @see #getProbabilisticRule()
-	 * @generated
-	 */
-	EAttribute getProbabilisticRule_Probability();
-
-	/**
-	 * Returns the meta object for class '{@link org.palladiosimulator.supporting.problog.model.problog.AnnotatedDisjunction <em>Annotated Disjunction</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Annotated Disjunction</em>'.
-	 * @see org.palladiosimulator.supporting.problog.model.problog.AnnotatedDisjunction
-	 * @generated
-	 */
-	EClass getAnnotatedDisjunction();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.palladiosimulator.supporting.problog.model.problog.AnnotatedDisjunction#getProbablisticFacts <em>Probablistic Facts</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.palladiosimulator.supporting.problog.model.problog.AnnotatedDisjunctionRule#getProbablisticFacts <em>Probablistic Facts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Probablistic Facts</em>'.
-	 * @see org.palladiosimulator.supporting.problog.model.problog.AnnotatedDisjunction#getProbablisticFacts()
-	 * @see #getAnnotatedDisjunction()
+	 * @see org.palladiosimulator.supporting.problog.model.problog.AnnotatedDisjunctionRule#getProbablisticFacts()
+	 * @see #getAnnotatedDisjunctionRule()
 	 * @generated
 	 */
-	EReference getAnnotatedDisjunction_ProbablisticFacts();
+	EReference getAnnotatedDisjunctionRule_ProbablisticFacts();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link org.palladiosimulator.supporting.problog.model.problog.AnnotatedDisjunction#getBody <em>Body</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.palladiosimulator.supporting.problog.model.problog.AnnotatedDisjunctionRule#getBody <em>Body</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Body</em>'.
-	 * @see org.palladiosimulator.supporting.problog.model.problog.AnnotatedDisjunction#getBody()
-	 * @see #getAnnotatedDisjunction()
+	 * @see org.palladiosimulator.supporting.problog.model.problog.AnnotatedDisjunctionRule#getBody()
+	 * @see #getAnnotatedDisjunctionRule()
 	 * @generated
 	 */
-	EReference getAnnotatedDisjunction_Body();
-
-	/**
-	 * Returns the meta object for class '{@link org.palladiosimulator.supporting.problog.model.problog.ProblogProgram <em>Program</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Program</em>'.
-	 * @see org.palladiosimulator.supporting.problog.model.problog.ProblogProgram
-	 * @generated
-	 */
-	EClass getProblogProgram();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.palladiosimulator.supporting.problog.model.problog.ProblogProgram#getClauses <em>Clauses</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Clauses</em>'.
-	 * @see org.palladiosimulator.supporting.problog.model.problog.ProblogProgram#getClauses()
-	 * @see #getProblogProgram()
-	 * @generated
-	 */
-	EReference getProblogProgram_Clauses();
+	EReference getAnnotatedDisjunctionRule_Body();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -367,12 +298,12 @@ public interface ProblogPackage extends EPackage {
 		EClass PROBABILISTIC_FACT = eINSTANCE.getProbabilisticFact();
 
 		/**
-		 * The meta object literal for the '<em><b>Head</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Fact</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROBABILISTIC_FACT__HEAD = eINSTANCE.getProbabilisticFact_Head();
+		EReference PROBABILISTIC_FACT__FACT = eINSTANCE.getProbabilisticFact_Fact();
 
 		/**
 		 * The meta object literal for the '<em><b>Probability</b></em>' attribute feature.
@@ -393,6 +324,14 @@ public interface ProblogPackage extends EPackage {
 		EClass PROBABILISTIC_RULE = eINSTANCE.getProbabilisticRule();
 
 		/**
+		 * The meta object literal for the '<em><b>Probabilistic Fact</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROBABILISTIC_RULE__PROBABILISTIC_FACT = eINSTANCE.getProbabilisticRule_ProbabilisticFact();
+
+		/**
 		 * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -401,30 +340,14 @@ public interface ProblogPackage extends EPackage {
 		EReference PROBABILISTIC_RULE__BODY = eINSTANCE.getProbabilisticRule_Body();
 
 		/**
-		 * The meta object literal for the '<em><b>Head</b></em>' containment reference feature.
+		 * The meta object literal for the '{@link org.palladiosimulator.supporting.problog.model.problog.impl.AnnotatedDisjunctionRuleImpl <em>Annotated Disjunction Rule</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see org.palladiosimulator.supporting.problog.model.problog.impl.AnnotatedDisjunctionRuleImpl
+		 * @see org.palladiosimulator.supporting.problog.model.problog.impl.ProblogPackageImpl#getAnnotatedDisjunctionRule()
 		 * @generated
 		 */
-		EReference PROBABILISTIC_RULE__HEAD = eINSTANCE.getProbabilisticRule_Head();
-
-		/**
-		 * The meta object literal for the '<em><b>Probability</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PROBABILISTIC_RULE__PROBABILITY = eINSTANCE.getProbabilisticRule_Probability();
-
-		/**
-		 * The meta object literal for the '{@link org.palladiosimulator.supporting.problog.model.problog.impl.AnnotatedDisjunctionImpl <em>Annotated Disjunction</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.palladiosimulator.supporting.problog.model.problog.impl.AnnotatedDisjunctionImpl
-		 * @see org.palladiosimulator.supporting.problog.model.problog.impl.ProblogPackageImpl#getAnnotatedDisjunction()
-		 * @generated
-		 */
-		EClass ANNOTATED_DISJUNCTION = eINSTANCE.getAnnotatedDisjunction();
+		EClass ANNOTATED_DISJUNCTION_RULE = eINSTANCE.getAnnotatedDisjunctionRule();
 
 		/**
 		 * The meta object literal for the '<em><b>Probablistic Facts</b></em>' containment reference list feature.
@@ -432,7 +355,7 @@ public interface ProblogPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ANNOTATED_DISJUNCTION__PROBABLISTIC_FACTS = eINSTANCE.getAnnotatedDisjunction_ProbablisticFacts();
+		EReference ANNOTATED_DISJUNCTION_RULE__PROBABLISTIC_FACTS = eINSTANCE.getAnnotatedDisjunctionRule_ProbablisticFacts();
 
 		/**
 		 * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
@@ -440,25 +363,7 @@ public interface ProblogPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ANNOTATED_DISJUNCTION__BODY = eINSTANCE.getAnnotatedDisjunction_Body();
-
-		/**
-		 * The meta object literal for the '{@link org.palladiosimulator.supporting.problog.model.problog.impl.ProblogProgramImpl <em>Program</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.palladiosimulator.supporting.problog.model.problog.impl.ProblogProgramImpl
-		 * @see org.palladiosimulator.supporting.problog.model.problog.impl.ProblogPackageImpl#getProblogProgram()
-		 * @generated
-		 */
-		EClass PROBLOG_PROGRAM = eINSTANCE.getProblogProgram();
-
-		/**
-		 * The meta object literal for the '<em><b>Clauses</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PROBLOG_PROGRAM__CLAUSES = eINSTANCE.getProblogProgram_Clauses();
+		EReference ANNOTATED_DISJUNCTION_RULE__BODY = eINSTANCE.getAnnotatedDisjunctionRule_Body();
 
 	}
 

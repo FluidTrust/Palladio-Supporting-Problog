@@ -9,12 +9,11 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.palladiosimulator.supporting.problog.model.problog.AnnotatedDisjunction;
+import org.palladiosimulator.supporting.problog.model.problog.AnnotatedDisjunctionRule;
 import org.palladiosimulator.supporting.problog.model.problog.ProbabilisticFact;
 import org.palladiosimulator.supporting.problog.model.problog.ProbabilisticRule;
 import org.palladiosimulator.supporting.problog.model.problog.ProblogFactory;
 import org.palladiosimulator.supporting.problog.model.problog.ProblogPackage;
-import org.palladiosimulator.supporting.problog.model.problog.ProblogProgram;
 
 import org.palladiosimulator.supporting.prolog.model.prolog.PrologPackage;
 
@@ -46,14 +45,7 @@ public class ProblogPackageImpl extends EPackageImpl implements ProblogPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass annotatedDisjunctionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass problogProgramEClass = null;
+	private EClass annotatedDisjunctionRuleEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -133,7 +125,7 @@ public class ProblogPackageImpl extends EPackageImpl implements ProblogPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProbabilisticFact_Head() {
+	public EReference getProbabilisticFact_Fact() {
 		return (EReference)probabilisticFactEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -160,7 +152,7 @@ public class ProblogPackageImpl extends EPackageImpl implements ProblogPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProbabilisticRule_Body() {
+	public EReference getProbabilisticRule_ProbabilisticFact() {
 		return (EReference)probabilisticRuleEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -169,7 +161,7 @@ public class ProblogPackageImpl extends EPackageImpl implements ProblogPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getProbabilisticRule_Head() {
+	public EReference getProbabilisticRule_Body() {
 		return (EReference)probabilisticRuleEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -178,8 +170,8 @@ public class ProblogPackageImpl extends EPackageImpl implements ProblogPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getProbabilisticRule_Probability() {
-		return (EAttribute)probabilisticRuleEClass.getEStructuralFeatures().get(2);
+	public EClass getAnnotatedDisjunctionRule() {
+		return annotatedDisjunctionRuleEClass;
 	}
 
 	/**
@@ -187,8 +179,8 @@ public class ProblogPackageImpl extends EPackageImpl implements ProblogPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAnnotatedDisjunction() {
-		return annotatedDisjunctionEClass;
+	public EReference getAnnotatedDisjunctionRule_ProbablisticFacts() {
+		return (EReference)annotatedDisjunctionRuleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -196,35 +188,8 @@ public class ProblogPackageImpl extends EPackageImpl implements ProblogPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAnnotatedDisjunction_ProbablisticFacts() {
-		return (EReference)annotatedDisjunctionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAnnotatedDisjunction_Body() {
-		return (EReference)annotatedDisjunctionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getProblogProgram() {
-		return problogProgramEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getProblogProgram_Clauses() {
-		return (EReference)problogProgramEClass.getEStructuralFeatures().get(0);
+	public EReference getAnnotatedDisjunctionRule_Body() {
+		return (EReference)annotatedDisjunctionRuleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -256,20 +221,16 @@ public class ProblogPackageImpl extends EPackageImpl implements ProblogPackage {
 
 		// Create classes and their features
 		probabilisticFactEClass = createEClass(PROBABILISTIC_FACT);
-		createEReference(probabilisticFactEClass, PROBABILISTIC_FACT__HEAD);
+		createEReference(probabilisticFactEClass, PROBABILISTIC_FACT__FACT);
 		createEAttribute(probabilisticFactEClass, PROBABILISTIC_FACT__PROBABILITY);
 
 		probabilisticRuleEClass = createEClass(PROBABILISTIC_RULE);
+		createEReference(probabilisticRuleEClass, PROBABILISTIC_RULE__PROBABILISTIC_FACT);
 		createEReference(probabilisticRuleEClass, PROBABILISTIC_RULE__BODY);
-		createEReference(probabilisticRuleEClass, PROBABILISTIC_RULE__HEAD);
-		createEAttribute(probabilisticRuleEClass, PROBABILISTIC_RULE__PROBABILITY);
 
-		annotatedDisjunctionEClass = createEClass(ANNOTATED_DISJUNCTION);
-		createEReference(annotatedDisjunctionEClass, ANNOTATED_DISJUNCTION__PROBABLISTIC_FACTS);
-		createEReference(annotatedDisjunctionEClass, ANNOTATED_DISJUNCTION__BODY);
-
-		problogProgramEClass = createEClass(PROBLOG_PROGRAM);
-		createEReference(problogProgramEClass, PROBLOG_PROGRAM__CLAUSES);
+		annotatedDisjunctionRuleEClass = createEClass(ANNOTATED_DISJUNCTION_RULE);
+		createEReference(annotatedDisjunctionRuleEClass, ANNOTATED_DISJUNCTION_RULE__PROBABLISTIC_FACTS);
+		createEReference(annotatedDisjunctionRuleEClass, ANNOTATED_DISJUNCTION_RULE__BODY);
 	}
 
 	/**
@@ -306,24 +267,20 @@ public class ProblogPackageImpl extends EPackageImpl implements ProblogPackage {
 		// Add supertypes to classes
 		probabilisticFactEClass.getESuperTypes().add(thePrologPackage.getClause());
 		probabilisticRuleEClass.getESuperTypes().add(thePrologPackage.getClause());
-		annotatedDisjunctionEClass.getESuperTypes().add(thePrologPackage.getClause());
+		annotatedDisjunctionRuleEClass.getESuperTypes().add(thePrologPackage.getClause());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(probabilisticFactEClass, ProbabilisticFact.class, "ProbabilisticFact", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getProbabilisticFact_Head(), thePrologPackage.getCompoundTerm(), null, "head", null, 1, 1, ProbabilisticFact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProbabilisticFact_Fact(), thePrologPackage.getCompoundTerm(), null, "fact", null, 1, 1, ProbabilisticFact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProbabilisticFact_Probability(), ecorePackage.getEDouble(), "probability", null, 0, 1, ProbabilisticFact.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(probabilisticRuleEClass, ProbabilisticRule.class, "ProbabilisticRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getProbabilisticRule_ProbabilisticFact(), this.getProbabilisticFact(), null, "probabilisticFact", null, 1, 1, ProbabilisticRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProbabilisticRule_Body(), theExpressionsPackage.getExpression(), null, "body", null, 0, 1, ProbabilisticRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProbabilisticRule_Head(), thePrologPackage.getCompoundTerm(), null, "head", null, 1, 1, ProbabilisticRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getProbabilisticRule_Probability(), ecorePackage.getEDouble(), "probability", null, 0, 1, ProbabilisticRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(annotatedDisjunctionEClass, AnnotatedDisjunction.class, "AnnotatedDisjunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAnnotatedDisjunction_ProbablisticFacts(), this.getProbabilisticFact(), null, "probablisticFacts", null, 1, -1, AnnotatedDisjunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAnnotatedDisjunction_Body(), theExpressionsPackage.getExpression(), null, "body", null, 0, 1, AnnotatedDisjunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(problogProgramEClass, ProblogProgram.class, "ProblogProgram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getProblogProgram_Clauses(), thePrologPackage.getClause(), null, "clauses", null, 0, -1, ProblogProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(annotatedDisjunctionRuleEClass, AnnotatedDisjunctionRule.class, "AnnotatedDisjunctionRule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAnnotatedDisjunctionRule_ProbablisticFacts(), this.getProbabilisticFact(), null, "probablisticFacts", null, 1, -1, AnnotatedDisjunctionRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAnnotatedDisjunctionRule_Body(), theExpressionsPackage.getExpression(), null, "body", null, 0, 1, AnnotatedDisjunctionRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

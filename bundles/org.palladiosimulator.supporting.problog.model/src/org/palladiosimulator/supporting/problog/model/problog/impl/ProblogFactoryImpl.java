@@ -58,8 +58,7 @@ public class ProblogFactoryImpl extends EFactoryImpl implements ProblogFactory {
 		switch (eClass.getClassifierID()) {
 			case ProblogPackage.PROBABILISTIC_FACT: return createProbabilisticFact();
 			case ProblogPackage.PROBABILISTIC_RULE: return createProbabilisticRule();
-			case ProblogPackage.ANNOTATED_DISJUNCTION: return createAnnotatedDisjunction();
-			case ProblogPackage.PROBLOG_PROGRAM: return createProblogProgram();
+			case ProblogPackage.ANNOTATED_DISJUNCTION_RULE: return createAnnotatedDisjunctionRule();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -90,19 +89,9 @@ public class ProblogFactoryImpl extends EFactoryImpl implements ProblogFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AnnotatedDisjunction createAnnotatedDisjunction() {
-		AnnotatedDisjunctionImpl annotatedDisjunction = new AnnotatedDisjunctionImpl();
-		return annotatedDisjunction;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProblogProgram createProblogProgram() {
-		ProblogProgramImpl problogProgram = new ProblogProgramImpl();
-		return problogProgram;
+	public AnnotatedDisjunctionRule createAnnotatedDisjunctionRule() {
+		AnnotatedDisjunctionRuleImpl annotatedDisjunctionRule = new AnnotatedDisjunctionRuleImpl();
+		return annotatedDisjunctionRule;
 	}
 
 	/**

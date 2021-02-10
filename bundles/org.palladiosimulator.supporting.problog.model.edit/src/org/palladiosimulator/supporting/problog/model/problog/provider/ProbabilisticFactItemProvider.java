@@ -90,7 +90,7 @@ public class ProbabilisticFactItemProvider extends ClauseItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ProblogPackage.Literals.PROBABILISTIC_FACT__HEAD);
+			childrenFeatures.add(ProblogPackage.Literals.PROBABILISTIC_FACT__FACT);
 		}
 		return childrenFeatures;
 	}
@@ -147,7 +147,7 @@ public class ProbabilisticFactItemProvider extends ClauseItemProvider {
 			case ProblogPackage.PROBABILISTIC_FACT__PROBABILITY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ProblogPackage.PROBABILISTIC_FACT__HEAD:
+			case ProblogPackage.PROBABILISTIC_FACT__FACT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -167,7 +167,7 @@ public class ProbabilisticFactItemProvider extends ClauseItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ProblogPackage.Literals.PROBABILISTIC_FACT__HEAD,
+				(ProblogPackage.Literals.PROBABILISTIC_FACT__FACT,
 				 PrologFactory.eINSTANCE.createCompoundTerm()));
 	}
 

@@ -145,49 +145,26 @@ public class ProblogItemProviderAdapterFactory extends ProblogAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.supporting.problog.model.problog.AnnotatedDisjunction} instances.
+	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.supporting.problog.model.problog.AnnotatedDisjunctionRule} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AnnotatedDisjunctionItemProvider annotatedDisjunctionItemProvider;
+	protected AnnotatedDisjunctionRuleItemProvider annotatedDisjunctionRuleItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.supporting.problog.model.problog.AnnotatedDisjunction}.
+	 * This creates an adapter for a {@link org.palladiosimulator.supporting.problog.model.problog.AnnotatedDisjunctionRule}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createAnnotatedDisjunctionAdapter() {
-		if (annotatedDisjunctionItemProvider == null) {
-			annotatedDisjunctionItemProvider = new AnnotatedDisjunctionItemProvider(this);
+	public Adapter createAnnotatedDisjunctionRuleAdapter() {
+		if (annotatedDisjunctionRuleItemProvider == null) {
+			annotatedDisjunctionRuleItemProvider = new AnnotatedDisjunctionRuleItemProvider(this);
 		}
 
-		return annotatedDisjunctionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.supporting.problog.model.problog.ProblogProgram} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ProblogProgramItemProvider problogProgramItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.supporting.problog.model.problog.ProblogProgram}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createProblogProgramAdapter() {
-		if (problogProgramItemProvider == null) {
-			problogProgramItemProvider = new ProblogProgramItemProvider(this);
-		}
-
-		return problogProgramItemProvider;
+		return annotatedDisjunctionRuleItemProvider;
 	}
 
 	/**
@@ -318,8 +295,7 @@ public class ProblogItemProviderAdapterFactory extends ProblogAdapterFactory imp
 	public void dispose() {
 		if (probabilisticFactItemProvider != null) probabilisticFactItemProvider.dispose();
 		if (probabilisticRuleItemProvider != null) probabilisticRuleItemProvider.dispose();
-		if (annotatedDisjunctionItemProvider != null) annotatedDisjunctionItemProvider.dispose();
-		if (problogProgramItemProvider != null) problogProgramItemProvider.dispose();
+		if (annotatedDisjunctionRuleItemProvider != null) annotatedDisjunctionRuleItemProvider.dispose();
 	}
 
 	/**
@@ -382,7 +358,7 @@ public class ProblogItemProviderAdapterFactory extends ProblogAdapterFactory imp
 				newChildDescriptors.add
 					(createChildParameter
 						(PrologPackage.Literals.PROGRAM__CLAUSES,
-						 ProblogFactory.eINSTANCE.createAnnotatedDisjunction()));
+						 ProblogFactory.eINSTANCE.createAnnotatedDisjunctionRule()));
 
 				return null;
 			}
