@@ -13,5 +13,6 @@ Export-Package: org.palladiosimulator.supporting.problog.model.problog,
  org.palladiosimulator.supporting.problog.model.problog.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.palladiosimulator.supporting.prolog.model;visibility:=reexport,
- org.eclipse.core.runtime
+ org.eclipse.core.runtime,
+ org.palladiosimulator.supporting.problog.workflow;bundle-version="1.0.0";resolution:=optional
 Bundle-ActivationPolicy: lazy

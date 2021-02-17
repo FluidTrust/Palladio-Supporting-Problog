@@ -3,6 +3,12 @@
  */
 package org.palladiosimulator.supporting.prolog.probabilistic;
 
+import org.palladiosimulator.supporting.problog.model.problog.ProblogPackage;
+import org.palladiosimulator.supporting.prolog.model.prolog.PrologPackage;
+import org.palladiosimulator.supporting.prolog.model.prolog.directives.DirectivesPackage;
+import org.palladiosimulator.supporting.prolog.model.prolog.expressions.ExpressionsPackage;
+
+import com.google.inject.Injector;
 
 /**
  * Initialization support for running Xtext languages without Equinox extension registry.
@@ -12,4 +18,14 @@ public class ProblogStandaloneSetup extends ProblogStandaloneSetupGenerated {
 	public static void doSetup() {
 		new ProblogStandaloneSetup().createInjectorAndDoEMFRegistration();
 	}
+	
+	@Override
+	public void register(Injector injector) {
+		ProblogPackage.eINSTANCE.eClass();
+		PrologPackage.eINSTANCE.eClass();
+		ExpressionsPackage.eINSTANCE.eClass();
+		DirectivesPackage.eINSTANCE.eClass();
+		super.register(injector);
+	}
+	
 }
