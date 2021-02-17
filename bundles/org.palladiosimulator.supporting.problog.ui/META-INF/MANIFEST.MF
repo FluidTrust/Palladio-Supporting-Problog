@@ -13,6 +13,14 @@ Require-Bundle: org.palladiosimulator.supporting.problog,
  org.eclipse.xtext.ui.shared,
  org.eclipse.xtext.ui.codetemplates.ui,
  org.eclipse.ui.editors;bundle-version="3.5.0",
- org.eclipse.ui.ide;bundle-version="3.5.0"
+ org.eclipse.ui.ide;bundle-version="3.5.0",
+ org.eclipse.ui,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder,
+ org.palladiosimulator.supporting.prolog.ui;bundle-version="4.3.0";visibility:=reexport
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: org.palladiosimulator.supporting.prolog.probabilistic.ui.contentassist,
+ org.palladiosimulator.supporting.prolog.probabilistic.ui.quickfix,
+ org.palladiosimulator.supporting.problog.ui.internal
+Bundle-Activator: org.palladiosimulator.supporting.problog.ui.internal.ProblogActivator

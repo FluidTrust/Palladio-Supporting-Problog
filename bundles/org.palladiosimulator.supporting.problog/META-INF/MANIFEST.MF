@@ -10,5 +10,17 @@ Require-Bundle: org.palladiosimulator.supporting.problog.model,
  org.eclipse.xtext,
  org.eclipse.xtext.xbase,
  org.eclipse.equinox.common;bundle-version="3.5.0",
- org.palladiosimulator.supporting.prolog;bundle-version="4.3.0"
+ org.palladiosimulator.supporting.prolog;bundle-version="4.3.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: org.palladiosimulator.supporting.prolog.probabilistic.parser.antlr,
+ org.palladiosimulator.supporting.prolog.probabilistic.validation,
+ org.palladiosimulator.supporting.prolog.probabilistic.scoping,
+ org.palladiosimulator.supporting.prolog.probabilistic,
+ org.palladiosimulator.supporting.prolog.probabilistic.serializer,
+ org.palladiosimulator.supporting.prolog.probabilistic.generator,
+ org.palladiosimulator.supporting.prolog.probabilistic.services,
+ org.palladiosimulator.supporting.prolog.probabilistic.parser.antlr.internal
+Import-Package: org.apache.log4j
