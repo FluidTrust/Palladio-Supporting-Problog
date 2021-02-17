@@ -1,0 +1,36 @@
+module generate
+
+import org.eclipse.emf.mwe2.ecore.EcoreGenerator
+import tools.mdsd.ecoreworkflow.mwe2lib.bean.EclipseRCPSupportingStandaloneSetup
+import tools.mdsd.ecoreworkflow.mwe2lib.component.ContextDependentMapping
+import tools.mdsd.ecoreworkflow.mwe2lib.component.URISupportingDirectoryCleaner
+import tools.mdsd.ecoreworkflow.mwe2lib.component.GapPatternPostProcessor
+
+var workspaceRoot = "../../"
+
+Workflow {
+	
+	bean = EclipseRCPSupportingStandaloneSetup {
+		scanClassPath = true
+		platformUri = workspaceRoot
+		
+		uriMap = {
+			from = "platform:/plugin/org.palladiosimulator.supporting.prolog.model/model/prolog.genmodel"
+			to = "platform:/resource/org.palladiosimulator.supporting.prolog.model/model/prolog.genmodel"
+		}
+	}
+
+	component = EcoreGenerator {
+		generateCustomClasses = false
+		generateEdit = true
+		generateEditor = true
+		genModel = "platform:/resource/org.palladiosimulator.supporting.problog.model/model/problog.genmodel"
+		srcPath = "platform:/resource/org.palladiosimulator.supporting.problog.model/src-gen"
+		srcPath = "platform:/resource/org.palladiosimulator.supporting.problog.model/src"
+		srcPath = "platform:/resource/org.palladiosimulator.supporting.problog.model.edit/src-gen"
+		srcPath = "platform:/resource/org.palladiosimulator.supporting.problog.model.edit/src"
+		srcPath = "platform:/resource/org.palladiosimulator.supporting.problog.model.editor/src-gen"
+		srcPath = "platform:/resource/org.palladiosimulator.supporting.problog.model.editor/src"
+	}
+
+}
