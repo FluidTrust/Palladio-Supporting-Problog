@@ -20,7 +20,6 @@ class ProblogParsingTest {
 	ParseHelper<Program> parseHelper
 	
 	@Test
-	@Disabled
 	def void testProbabilisticFact() {
 		val result = parseHelper.parse('''
 			0.5::heads1.
@@ -29,4 +28,66 @@ class ProblogParsingTest {
 		val errors = result.eResource.errors
 		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
 	}
+
+// Fractions as probabilities are not supported, because there currently is no need for them.
+//	@Test
+//	def void testFractionProbability() {
+//		val result = parseHelper.parse('''
+//			1/2::heads1.
+//		''')
+//		Assertions.assertNotNull(result)
+//		val errors = result.eResource.errors
+//		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
+//	}
+	
+	@Test
+	def void testProbabilisticRule() {
+		val result = parseHelper.parse('''
+			0.6::heads(C) :- coin(C).
+		''')
+		Assertions.assertNotNull(result)
+		val errors = result.eResource.errors
+		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
+	}
+	
+	@Test
+	def void testAnnotatedDisjFactsNoBody() {
+		val result = parseHelper.parse('''
+			0.15::one2; 0.15::two2; 0.15::three2; 0.15::four2; 0.15::five2; 0.25::six2.
+		''')
+		Assertions.assertNotNull(result)
+		val errors = result.eResource.errors
+		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
+	}
+	
+	@Test
+	def void testAnnotatedDisjFactsWithBody() {
+		val result = parseHelper.parse('''
+			0.15::one2; 0.15::two2; 0.15::three2; 0.15::four2; 0.15::five2; 0.25::six2 :- test.
+		''')
+		Assertions.assertNotNull(result)
+		val errors = result.eResource.errors
+		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
+	}
+	
+	@Test
+	def void testAnnotatedDisjRulesNoBody() {
+		val result = parseHelper.parse('''
+			0.15::one(2); 0.15::two(2); 0.15::three(2); 0.15::four(2); 0.15::five(2); 0.25::six(2).
+		''')
+		Assertions.assertNotNull(result)
+		val errors = result.eResource.errors
+		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
+	}
+	
+	@Test
+	def void testAnnotatedDisjRulesWithBody() {
+		val result = parseHelper.parse('''
+			0.167::dice(1,D); 0.167::dice(2,D); 0.167::dice(3,D); 0.167::dice(4,D); 0.167::dice(5,D); 0.167::dice(6,D) :- D > 1, P is D-1, continue(P).
+		''')
+		Assertions.assertNotNull(result)
+		val errors = result.eResource.errors
+		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
+	}
 }
+

@@ -18,16 +18,16 @@ Clause returns prolog::Clause:
 ;
 
 ProblogClauseParseRule returns prolog::Clause:
-	ProbabilisticFact (	({ProbabilisticRule.probabilisticFact=current} ':-' body=Expression_1100_xfy) |
+	ProbabilisticFact (	({ProbabilisticRule.probabilisticFact=current} (':-' body=Expression_1100_xfy)?) |
 						({AnnotatedDisjunctionRule.probablisticFacts+=current} (';' probablisticFacts+=ProbabilisticFact)+ (':-' body=Expression_1100_xfy)?)
-	)
+	) 
 ;
 
 ProbabilisticFact: 
 	probability=PROBABILITY '::' fact=CompoundTerm
 ;
 
-terminal PROBABILITY returns ecore::EDouble: '1' | '0.'('0'..'9')+;
+terminal PROBABILITY returns ecore::EDouble: '1.0' | '0.'(Prolog::INT)+;
 
 // Variant 2. Works too, but looses distinction of ProblogFact, ProblogRule
 // Assumption: Only semantic differentiation, all elements added by ProbLog are covered by the definition of AnnotatedDisjunctionRule:
